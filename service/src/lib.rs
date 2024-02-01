@@ -248,6 +248,11 @@ mod tests {
         thread::sleep(typing_speed_ms);
         rdev::simulate(&ButtonRelease(Button::Left)).unwrap();
         thread::sleep(typing_speed_ms);
+        thread::sleep(typing_speed_ms);
+        rdev::simulate(&ButtonPress(Button::Left)).unwrap();
+        thread::sleep(typing_speed_ms);
+        rdev::simulate(&ButtonRelease(Button::Left)).unwrap();
+        thread::sleep(typing_speed_ms);
 
         input!(KeyU, typing_speed_ms);
         #[cfg(not(feature = "inhibit"))]
